@@ -275,206 +275,23 @@ def suggest_role_skills(role: str, cfg: dict, profile: dict) -> None:
                 console.print("  [green]✓ Saved to master profile[/green]")
 
 # ── Default master profile ─────────────────────────────────────────────────────
+# This is only used on first run to seed ~/resume_profile.json.
+# The wizard will prompt you to fill in your real info on first launch.
 DEFAULT_PROFILE = {
-    "name": "Terrence Fleming",
-    "contact": (
-        "Danville, IN 46122  ·  812-671-7216  ·  Terrence.fleming.it@gmail.com  ·  "
-        "linkedin.com/in/terrence-fleming-it  ·  github.com/StrykrrYT"
-    ),
-    "skills": [
-        # ── Core IT ──
-        {
-            "label": "Operating Systems",
-            "value": "Windows 10/11 (domain & workgroup), Windows Server concepts; "
-                     "Linux — Ubuntu LTS, RHEL, Kali, CachyOS (Arch); "
-                     "CLI proficient across distros; OS installation, imaging, and configuration",
-        },
-        {
-            "label": "Hardware & Peripherals",
-            "value": "PC component installation, replacement, and repair; "
-                     "hardware diagnostics, peripheral setup, driver troubleshooting; "
-                     "laptop screen/keyboard/battery replacement; "
-                     "remote desktop support (RDP/SSH/TeamViewer)",
-        },
-        {
-            "label": "Networking",
-            "value": "TCP/IP, DNS (A/CNAME/MX/NS), DHCP, static IP assignment, "
-                     "SOHO router/gateway config, port forwarding, VLANs, "
-                     "OpenVPN, UFW/iptables firewall; "
-                     "nslookup, ipconfig, ping, tracert, netstat; Cisco Packet Tracer",
-        },
-        {
-            "label": "Server & Infrastructure",
-            "value": "LAMP stack (Linux/Apache/MySQL/PHP), VPS provisioning from scratch, "
-                     "SSH hardening, UFW rules, systemd service management, "
-                     "Apache virtual hosts, cron jobs, log rotation",
-        },
-        # ── Security ──
-        {
-            "label": "Cybersecurity",
-            "value": "Wireshark (PCAP/C2 traffic analysis), firewall policy config, "
-                     "log analysis, SSH hardening, vulnerability scanning concepts; "
-                     "SIEM fundamentals, incident response lifecycle, "
-                     "HackTheBox, TryHackMe; Ivy Tech Statewide IT Challenge (Nov 2026)",
-        },
-        {
-            "label": "Identity & Access",
-            "value": "Active Directory concepts (user/group management, GPO, OU structure), "
-                     "account provisioning/deprovisioning, MFA, "
-                     "principle of least privilege; password policy enforcement",
-        },
-        # ── Cloud / Virtualization ──
-        {
-            "label": "Virtualization",
-            "value": "VirtualBox, VMware Workstation (VM creation, snapshots, networking); "
-                     "basic container concepts (Docker); "
-                     "hypervisor types I & II awareness",
-        },
-        {
-            "label": "Cloud Platforms",
-            "value": "AWS fundamentals (EC2, S3, IAM — conceptual); "
-                     "cloud-adjacent Linux VPS admin (DigitalOcean/Vultr-style); "
-                     "DNS propagation, SSL/TLS certificate installation (Let's Encrypt)",
-        },
-        # ── Dev / Scripting ──
-        {
-            "label": "Scripting & Development",
-            "value": "Python (automation, detection scripts, data parsing), "
-                     "Bash (shell scripting, cron, system tasks), "
-                     "JavaScript / Node.js; "
-                     "MySQL (schema design, CRUD, remote admin, stored procedures); "
-                     "Git / GitHub version control",
-        },
-        # ── Help Desk / Support Tools ──
-        {
-            "label": "Help Desk & Ticketing",
-            "value": "IssueTrax (issue tracking and resolution workflow); "
-                     "familiar with ServiceNow and Jira concepts; "
-                     "incident triage, escalation paths, SLA awareness; "
-                     "remote support tooling (RDP, SSH, screen-share)",
-        },
-        {
-            "label": "Troubleshooting Methodology",
-            "value": "CompTIA A+ 6-step troubleshooting model; "
-                     "root-cause analysis, systematic isolation of hardware vs. software vs. network faults; "
-                     "clear end-user communication throughout resolution",
-        },
-        # ── Compliance / Documentation ──
-        {
-            "label": "Compliance & Data Privacy",
-            "value": "PII/PHI data handling (HIPAA awareness); "
-                     "PCI-DSS concepts; "
-                     "strict data compliance during licensed insurance role (Progressive); "
-                     "chain-of-custody documentation",
-        },
-        {
-            "label": "Technical Documentation",
-            "value": "Network diagrams, runbooks, incident reports, SOPs; "
-                     "Markdown and plain-text documentation; "
-                     "Microsoft Office (Word, Excel, Outlook); accurate recordkeeping",
-        },
-        # ── Soft Skills / General ──
-        {
-            "label": "Customer Service & Communication",
-            "value": "High-volume inbound call handling (insurance contact center); "
-                     "calm and clear under pressure; "
-                     "ranked #3/15 on performance metrics; "
-                     "experience translating technical issues for non-technical users",
-        },
-        {
-            "label": "Audio/Visual & Media",
-            "value": "OBS Studio (stream/recording setup, scene management, audio routing); "
-                     "basic video editing; "
-                     "Discord bot hosting and server administration",
-        },
-        {
-            "label": "Physical & Logistics",
-            "value": "Valid driver's license; willing to travel to multiple sites; "
-                     "certified forklift operator; "
-                     "ability to lift 50+ lbs; "
-                     "DOT-compliant delivery operations (120–160 stops/day, zero safety incidents)",
-        },
-    ],
+    "name": "Your Name",
+    "contact": "City, State  ·  555-555-5555  ·  you@email.com  ·  linkedin.com/in/yourprofile",
+    "skills":   [],
     "education": [
         {
-            "degree": "AAS Cybersecurity / Cyber Assurance",
-            "school": "Ivy Tech Community College",
-            "dates":  "Aug 2025 – Dec 2027",
-            "note":   "Online; coursework directly maps to CompTIA A+, Network+, and Security+ objectives",
+            "degree": "Your Degree / Certification",
+            "school": "Your School",
+            "dates":  "Month Year – Month Year",
+            "note":   "",
         }
     ],
-    "certifications": [
-        "CompTIA A+ — In Progress",
-        "CompTIA Network+ — Scheduled",
-        "CompTIA Security+ — Planned",
-    ],
-    "projects": [
-        {
-            "title": "Ivy Tech Statewide IT Challenge — Cybersecurity Category (Nov 2026)",
-            "meta":  "Team 12 — Network Analyst / Detection Engineer",
-            "bullets": [
-                "Analyzed logs and audit events to identify a compromised account; isolated attacker IP and anomalous fingerprint.",
-                "Live PCAP analysis in Wireshark — identified C2 HTTP POST beacon, extracted payload from HTTP layer.",
-                "Python detection function: TP=5, FN=0, FP=0. Authored incident containment report for simulated PHI/PII breach; all phases passed.",
-            ],
-        },
-        {
-            "title": "Homelab & Personal Infrastructure — Self-Directed (Ongoing)",
-            "meta":  "",
-            "bullets": [
-                "Provisioned Ubuntu LTS VPS servers from scratch via SSH; configured UFW firewall, static IPs, MySQL, and systemd services.",
-                "Built full LAMP stack (Apache, MySQL, PHP); complete DNS config — A/CNAME/MX records, nameserver delegation, company email.",
-                "Configured OpenVPN, port forwarding, router/gateway management, and Discord bot hosting on self-managed infrastructure.",
-                "Built routed networks in Cisco Packet Tracer — routers, switches, PCs, and laptops with VLAN and inter-VLAN routing.",
-            ],
-        },
-        {
-            "title": "resume_builder — Open Source CLI Tool (github.com/StrykrrYT/resume-builder)",
-            "meta":  "Python · InquirerPy · ReportLab · Rich",
-            "bullets": [
-                "Built an interactive 6-step CLI wizard that generates tailored, ATS-optimized PDF resumes from a JSON master profile.",
-                "Role-aware summary templates auto-select based on job title keywords (support, security, network, cloud, dev).",
-                "Supports adding new jobs, projects, and skill categories on the fly with optional save-back to master profile.",
-            ],
-        },
-    ],
-    "jobs": [
-        {
-            "title":   "Delivery Associate",
-            "company": "3-Pete Logistics LLC / Index Distributors Inc. (Amazon DSP)",
-            "dates":   "May 2026 – Sep 2026",
-            "bullets": [
-                "Operated Sprinter van routes (120–160 stops/day) across multiple sites with zero safety incidents.",
-                "Resolved customer issues in the field; maintained valid driver's license and DOT compliance throughout.",
-            ],
-        },
-        {
-            "title":   "Licensed Insurance Agent",
-            "company": "Foundever LLC (Progressive)",
-            "dates":   "Oct 2024 – May 2025",
-            "bullets": [
-                "Handled high-volume inbound calls; provided technical assistance and training to system users on policy and software tools.",
-                "Ranked #3 of 15 team members on performance metrics; maintained strict PII/data compliance under state and federal regulations.",
-            ],
-        },
-        {
-            "title":   "Forklift Operator",
-            "company": "R+L Carriers",
-            "dates":   "June 2023 – Jan 2024",
-            "bullets": [
-                "Certified forklift operator — loading/unloading and inventory management; routinely moved equipment up to 50+ lbs.",
-                "Verified driver documentation and BOL accuracy; maintained warehouse safety standards.",
-            ],
-        },
-        {
-            "title":   "Shift Lead",
-            "company": "Dairy Queen",
-            "dates":   "Feb 2022 – May 2023",
-            "bullets": [
-                "Supervised team operations, scheduling, and cash handling; demonstrated reliability and leadership under pressure.",
-            ],
-        },
-    ],
+    "certifications": [],
+    "projects": [],
+    "jobs": [],
 }
 
 # ── Profile helpers ────────────────────────────────────────────────────────────
@@ -905,8 +722,9 @@ def run_wizard(profile: dict) -> dict:
     ).execute()
     cfg["role_title"] = role
 
-    safe_name = role.strip().replace(" ", "_").replace("/", "_").replace("\\", "_")
-    suggested = f"Terrence_Fleming_{safe_name}_Resume.pdf"
+    safe_role = role.strip().replace(" ", "_").replace("/", "_").replace("\\", "_")
+    safe_person = profile.get("name", "Resume").strip().replace(" ", "_")
+    suggested = f"{safe_person}_{safe_role}_Resume.pdf"
     fname = inquirer.text(
         message="Output filename:",
         default=suggested,
