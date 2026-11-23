@@ -14,6 +14,7 @@ Stores a master profile so you never re-enter your contact info, then walks you 
 - **Add on the fly** — add new skills, projects, or jobs during the wizard and optionally save them to your master profile
 - **ATS-safe PDF** — single-column, no tables, standard section headings (`Professional Summary`, `Technical Skills`, `Education & Certifications`, `Projects`, `Work Experience`)
 - **First-run setup** — on first launch you choose where to save PDFs; the choice is remembered
+- **Optional Ollama integration** — if you have [Ollama](https://ollama.com) running locally, the tool uses it for smarter role suggestions; falls back to the built-in dictionary automatically if you don't
 
 ---
 
@@ -173,16 +174,18 @@ Roles outside these families show no suggestions (the step is skipped automatica
 
 ---
 
-## Optional: Ollama (better suggestions, free, local, no API key)
+## Optional: Ollama (smarter suggestions, free, local, no API key)
 
-If the built-in dictionary doesn't cover your role well, you can install [Ollama](https://ollama.com) to get AI-generated suggestions — running entirely on your own machine, no account, no cost.
+The built-in dictionary covers 8 common role families. For anything else — or just better suggestions across the board — you can install [Ollama](https://ollama.com). It runs a local AI model entirely on your own machine: no account, no API key, no internet required, no ongoing cost.
 
-### Install Ollama
+**It is completely optional.** The tool checks for it automatically and falls back to the dictionary if it's not running. Nothing breaks either way.
+
+### Install
 
 **Linux / macOS:**
 ```bash
 curl -fsSL https://ollama.com/install.sh | sh
-ollama pull llama3.2   # ~2 GB, one-time download
+ollama pull llama3.2   # ~2 GB one-time download
 ```
 
 **Windows:**
@@ -193,9 +196,9 @@ ollama pull llama3.2
 
 ### How it works
 
-When you reach Step 4, the tool checks if Ollama is running at `http://localhost:11434`. If it is, it generates role-specific suggestions using `llama3.2`. If it isn't, it falls back to the built-in dictionary silently — **Ollama is never required.**
+When you reach Step 4 (Skills), the tool silently pings `http://localhost:11434`. If Ollama is running with `llama3.2`, it generates role-specific suggestions on the fly. If it's not running, the built-in dictionary kicks in instead — you won't see an error either way.
 
-You do not need to start Ollama manually after install on Linux/macOS (it runs as a system service). On Windows, launch the Ollama app before running the resume builder.
+On Linux/macOS, Ollama runs as a background service after install — no manual start needed. On Windows, launch the Ollama desktop app before running the resume builder.
 
 ---
 
