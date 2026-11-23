@@ -103,13 +103,11 @@ During install, **check "Add Python to PATH"** before clicking Install.
 
 **Step 2 — Install dependencies**
 
-Open PowerShell and run:
+Open PowerShell or Windows Terminal and run:
 
 ```powershell
-pip install InquirerPy reportlab rich requests beautifulsoup4 windows-curses
+pip install InquirerPy reportlab rich requests beautifulsoup4
 ```
-
-> `windows-curses` is required for the interactive checkboxes to work on Windows.
 
 **Step 3 — Run the tool**
 
@@ -117,7 +115,7 @@ pip install InquirerPy reportlab rich requests beautifulsoup4 windows-curses
 python resume_builder.py
 ```
 
-> **Note:** The interactive terminal UI (`InquirerPy`) works best in **Windows Terminal** (available free from the Microsoft Store) rather than the legacy Command Prompt. PowerShell in Windows Terminal works well.
+> **Tip:** Use **Windows Terminal** (free on the Microsoft Store) for the best experience — the interactive checkboxes render better than in the legacy Command Prompt.
 
 > **Page count after build:** `pdfinfo` is not available on Windows by default. The tool will show "pages unknown" — your PDF is still built correctly. If you want page count, install [Poppler for Windows](https://github.com/oschwartz10612/poppler-windows/releases) and add its `bin/` folder to your PATH.
 

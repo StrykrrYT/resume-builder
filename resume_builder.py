@@ -8,10 +8,8 @@ Optional (better role suggestions): install Ollama + run: ollama pull llama3.2
 """
 
 import json
-import os
 import re
 import sys
-import platform
 import subprocess
 from pathlib import Path
 
@@ -34,15 +32,8 @@ console = Console()
 PROFILE_PATH = Path.home() / "resume_profile.json"
 
 def _default_output_dir() -> Path:
-    """Return the OS-appropriate default output directory."""
-    system = platform.system()
-    if system == "Windows":
-        base = Path(os.environ.get("USERPROFILE", Path.home())) / "Documents"
-    elif system == "Darwin":
-        base = Path.home() / "Documents"
-    else:
-        base = Path.home() / "Documents"
-    return base / "Resumes"
+    """Return ~/Documents/Resumes on all platforms (pathlib resolves correctly on Windows/macOS/Linux)."""
+    return Path.home() / "Documents" / "Resumes"
 
 # ── Colors (ReportLab) ─────────────────────────────────────────────────────────
 RL_BLACK  = colors.HexColor("#1a1a1a")
