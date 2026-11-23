@@ -4,6 +4,8 @@ An interactive CLI tool that builds tailored, ATS-ready resumes as PDF files.
 
 Stores a master profile so you never re-enter your contact info, then walks you through every section in a few minutes — skills, projects, work history, and a live JD keyword match.
 
+> **Privacy:** Everything stays on your machine. Your profile is saved to `~/resume_profile.json` — a plain text file on your own computer. No data is sent anywhere, no account is required, and I have zero access to anything you enter.
+
 ---
 
 ## What it does
@@ -204,7 +206,9 @@ On Linux/macOS, Ollama runs as a background service after install — no manual 
 
 ## Master profile
 
-Your master profile lives at `~/resume_profile.json`. It stores:
+Your master profile lives at `~/resume_profile.json` — a plain text file **on your own computer**. Nothing is uploaded, phoned home, or stored anywhere else. I have no access to it.
+
+It stores:
 
 - Contact info (name, email, phone, location, LinkedIn, GitHub)
 - Skills library
@@ -213,6 +217,8 @@ Your master profile lives at `~/resume_profile.json`. It stores:
 - Preferred output directory
 
 Skills, projects, and jobs added during the wizard can be saved back to this file so they're available on future runs.
+
+You can open and edit it in any text editor at any time, or delete it to start fresh.
 
 ---
 

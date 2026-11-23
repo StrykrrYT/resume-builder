@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Interactive Resume Builder
-Saves master profile to ~/resume_profile.json
+Saves master profile to ~/resume_profile.json (local only — no data leaves your machine)
 Run: python3 resume_builder.py
 Deps: pip install InquirerPy reportlab rich requests beautifulsoup4
 Optional (better role suggestions): install Ollama + run: ollama pull llama3.2
